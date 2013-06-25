@@ -1,0 +1,21 @@
+<package>
+  <name>ptp_controller</name>
+  <version>1.0.0</version>
+  <description>Point to point joint controller.</description>
+  <maintainer email="mahisorn.w@gmail.com">Mahisorn Wongphati</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">https://github.com/hiveground-ros-package/hiveground_controllers/wiki</url>
+  <!-- <url type="bugtracker"></url> -->
+
+  <author>Mahisorn Wongphati</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend> 
+  <run_depend>roscpp</run_depend>
+
+  <export>
+   	<cpp lflags="-L${prefix}/lib -lptp_controller" cflags="-I${prefix}/include"/> 
+  </export>	
+</package>
