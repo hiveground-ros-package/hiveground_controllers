@@ -1,0 +1,7 @@
+<library path="lib/libptp_follow_joint_trajectory_controller">
+  <class name="hiveground_controllers/PTPFollowJointTrajectoryController" type="hiveground_controllers::PTPFollowJointTrajectoryController" base_class_type="controller_interface::ControllerBase">
+  <description>
+    Later.
+  </description>
+  </class>
+</library>
