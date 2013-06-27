@@ -130,7 +130,7 @@ bool PTPFollowJointTrajectoryController::init(hardware_interface::PositionJointI
   // get all joint states from the hardware interface
   const std::vector<std::string>& joint_names = hw->getNames();
   for (unsigned i = 0; i < joint_names.size(); i++)
-    ROS_INFO_NAMED("PTPFollowJointController", "Got joint %s", joint_names[i].c_str());
+    ROS_DEBUG_NAMED("PTPFollowJointController", "Got joint %s", joint_names[i].c_str());
 
   XmlRpc::XmlRpcValue joints;
   if (!controller_nh.getParam("joints", joints))
@@ -154,7 +154,7 @@ bool PTPFollowJointTrajectoryController::init(hardware_interface::PositionJointI
     {
       if(joint_name == joint_names[i])
       {
-        ROS_INFO("Add joint %s to PTPFollowJointController", joint_name.c_str());
+        ROS_DEBUG("Add joint %s to PTPFollowJointController", joint_name.c_str());
         joints_.push_back(hw->getHandle(joint_name));
         break;
       }
@@ -185,7 +185,7 @@ bool PTPFollowJointTrajectoryController::init(hardware_interface::PositionJointI
 
 void PTPFollowJointTrajectoryController::starting(const ros::Time& time)
 {
-  ROS_INFO(__FUNCTION__);
+  ROS_DEBUG(__FUNCTION__);
 
   last_time_  = time;
 
