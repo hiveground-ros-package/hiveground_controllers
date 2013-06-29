@@ -185,8 +185,6 @@ bool PTPFollowJointTrajectoryController::init(hardware_interface::PositionJointI
 
 void PTPFollowJointTrajectoryController::starting(const ros::Time& time)
 {
-  ROS_DEBUG(__FUNCTION__);
-
   last_time_  = time;
 
   // Creates a "hold current position" trajectory.
@@ -286,6 +284,8 @@ static boost::shared_ptr<Member> share_member(boost::shared_ptr<Enclosure> enclo
 
 void PTPFollowJointTrajectoryController::goalCBFollow(GoalHandleFollow gh)
 {
+  ROS_DEBUG_STREAM(gh.getGoal()->trajectory);
+
   std::vector<std::string> joint_names(joints_.size());
   for (size_t j = 0; j < joints_.size(); ++j)
   {
